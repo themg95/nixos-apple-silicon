@@ -68,6 +68,8 @@
     curl
     wget
     wormhole-william
+    gparted
+    kitty
   ];
 
   # save space and compilation time. might revise?
@@ -127,6 +129,8 @@
   # avoid error that flakes must be enabled when nixos-install uses <nixpkgs>
   nixpkgs.flake.setNixPath = false;
   nixpkgs.flake.setFlakeRegistry = false;
+
+  programs.hyprland.enable = true;
 
   # get rid of warning that stateVersion is unset
   system.stateVersion = lib.mkDefault lib.trivial.release;
